@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>集中统一调度平台</title>
+    <!-- CSS -->
+    <link href="/udcs-web/css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
+    <link href="/udcs-web/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="/udcs-web/css/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link href="/udcs-web/css/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="/udcs-web/css/login.css" rel="stylesheet" type="text/css" />
+    <!-- Javascript -->
+    <script src="/udcs-web/js/jquery-1.12.4.min.js" type="text/javascript"/>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/udcs-web/js/utils/html5.js" type="text/javascript"/>
+    <![endif]-->
+    <script src="/udcs-web/js/utils/json2.js" type="text/javascript"/>
+    <script src="/udcs-web/js/ligerui/ligerui.all.js" type="text/javascript"/>
+    <script src="/udcs-web/js/utils/supersized.3.2.7.min.js" type="text/javascript"/>
+    <script src="/udcs-web/js/utils/supersized-init.js" type="text/javascript"/>
+    <script src="/udcs-web/js/login.js" type="text/javascript"/>
+</head>
+<body>
+<div class="page-container">
+    <div class="connect">
+        <a class="twitter" href="http://localhost/udcs-web"></a>
+    </div>
+    <div class="divform">
+        <input type="text" name="username" class="username" placeholder="请输入您的用户名..."/><div id="userNm" class="error"><span>+</span></div>
+        <input type="password" name="password" class="password" placeholder="请输入您的用户密码..."/><div id="pwd" class="error"><span>+</span></div>
+        <input type="Captcha" class="Captcha" name="captcha" placeholder="请输入验证码..."/><div id="captcha" class="error"><span>+</span></div>
+        <div class="kaptcha"><li><img id="codeImg" class="img-rounded" alt="点击更换" title="点击更换" src="http://localhost/udcs-web/kaptchaImage"/></li></div>
+        <button type="button" class="submit_button">登录</button>
+    </div>
+</div>
+</body>
+</html>

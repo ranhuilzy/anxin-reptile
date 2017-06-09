@@ -1,0 +1,61 @@
+group 'anxin.reptile.server'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: "war"
+repositories {
+    mavenCentral()
+}
+bootRepackage.enabled = true
+def buildTime = new Date().format("yyyyMMddHHmm")
+war {
+    baseName = project.name
+    extension = "war"
+    version '1.0-SNAPSHOT'
+    classifier = buildTime
+}
+dependencies {
+    compile project(":reptile-ui")
+    compile "org.apache.commons:commons-lang3:${commonsLang3Version}"
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+   compile "org.springframework.boot:spring-boot:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+//    compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+//    compile "org.springframework.boot:spring-boot-starter-amqp:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
+//    compile  "org.springframework.cloud:spring-cloud-config-server:${springCloudVersion}"
+//    compile  "org.springframework.cloud:spring-cloud-config-monitor:${springCloudVersion}"
+//    compile "org.springframework.cloud:spring-cloud-dependencies:Camden.SR6"
+//    compile  "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
+//    compile  "org.springframework.cloud:spring-cloud-starter-bus-amqp:${springCloudVersion}"
+//    compile  "org.springframework.cloud:spring-cloud-starter-stream-rabbit:1.2.1.RELEASE"
+
+    compile "commons-codec:commons-codec:${commons_codec_version}"
+    compile "commons-io:commons-io:${commons_io_version}"
+    compile "commons-lang:commons-lang:${commonsLangVersion}"
+    compile "commons-beanutils:commons-beanutils:${commons_beanutils_version}"
+    compile "org.apache.commons:commons-collections4:${commonsCollections4_version}"
+    compile "commons-collections:commons-collections:${commonsCollections_version}"
+    compile("org.springframework:spring-tx:$springVersion",
+            "org.springframework:spring-web:$springVersion",
+            "org.springframework:spring-webmvc:$springVersion",
+            "org.springframework:spring-webmvc-portlet:$springVersion")
+
+    compile "org.apache.poi:poi:${apache_poi_version}"
+    compile  "org.apache.poi:poi-ooxml:${poi_ooxml_version}"
+    compile "commons-net:commons-net:${commonsNet_version}"
+    compile "com.jcraft:jsch:${jcraft_jsch_version}"
+    compile "com.alibaba:fastjson:${fastjsonVersion}"
+    compile "org.slf4j:jcl-over-slf4j:1.7.25"
+    compile "org.slf4j:log4j-over-slf4j:1.7.25"
+    compile "org.slf4j:jul-to-slf4j:1.7.25"
+    compile "org.slf4j:slf4j-api:1.7.25"
+//    testCompile "org.springframework:spring-test:$springVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

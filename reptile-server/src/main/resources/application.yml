@@ -1,0 +1,13 @@
+server:
+  port: 5555
+---
+spring:
+  profiles:
+    active: dev
+#server:
+#  port: 6666
+comConfig:
+  file: classpath:configs/comms-config.properties
+logging:
+  config: classpath:configs/logback.xml
+  path: /home/finance/Logs/config_server

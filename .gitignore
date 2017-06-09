@@ -1,0 +1,27 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Written by Jadyer<http://blog.csdn.net/jadyer>
+# Git对于.ignore配置文件规则是优先级下面高于上面
+.settings
+.project
+.classpath
+.myeclipse
+.mymetadata
+.idea
+*.iml
+# 忽略target/目录下的所有文件
+target/
+bin/
+class/
+logs

@@ -1,0 +1,4 @@
+rootProject.name = 'anxin-reptile'
+include 'reptile-server'
+include 'reptile-ui'
+

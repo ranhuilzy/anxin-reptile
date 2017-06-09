@@ -1,0 +1,39 @@
+group 'anxin.reptile.server'
+version '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url anxinMvnUrl}
+        maven { url mvnrepositoryUrl}
+        maven { url milestoneUrl}
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'spring-boot'
+}
+configurations.all {
+    //设置jdk的版本
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+configure(subprojects) { project ->
+    repositories{
+        mavenLocal()
+        maven { url anxinMvnUrl}
+        maven { url mvnrepositoryUrl}
+        maven { url milestoneUrl}
+    }
+    group = 'com.udcs'
+    version '1.0-SNAPSHOT'
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+    configurations {
+//        all*.exclude group: 'commons-logging', module: 'commons-logging'
+    }
+}

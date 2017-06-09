@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: ${appName:anxin-reptile-server}
+info:
+  description: 安信外部数据爬虫项目
+
+# 配置文件属性读取之扫描包、多属性、随机数（各参数间也可直接引用来使用，且随机数支持随机字符串和数字）
+scan:
+  base:
+    packages: com.anxin.replile
+    detailInfo: 本工程扫描的包名为：${scan.base.packages}
+
+spring:
+  http:
+    encoding:
+      charset: utf8
+      enabled: true
+  thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      enabled: true
+      suffix: .htm
+      mode: HTML5
+      encoding: UTF-8
+      content-type: text/html
+  mvc:
+    view:
+      prefix: lasspath:/templates/
+      suffix: .htm
